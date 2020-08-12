@@ -24,7 +24,7 @@ def s2if(jsonsig, output_image="signature.png", input_image=BLANK_IMAGE,
     except ValueError:
         return None
     #Make sure its a signature or return None
-    if not l[0].has_key('lx') or not l[0].has_key('my'):
+    if not 'lx' in l[0] or not 'my' in l[0]:
         return None
     #create a blank image from out template
     im = Image.open(input_image)
@@ -58,7 +58,7 @@ def s2i(jsonsig, input_image=BLANK_IMAGE, pincolor=(0,0,255),
         im = Image.open(nosig_image)
         return im
     #Make sure its a signature or return None
-    if not l[0].has_key('lx') or not l[0].has_key('my'):
+    if not 'lx' in l[0] or not 'my' in l[0]:
         im = Image.open(nosig_image)
         return im
     #create a blank image from out template
